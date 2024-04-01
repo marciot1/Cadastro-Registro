@@ -85,9 +85,9 @@ tr {
 
 tbody tr td {
   vertical-align: text-top;
-  padding: 10px 9px;
+  padding: 2px 9px;
   max-width: 50px;
-  background-color: darkgrey;
+  background-color: rgb(202, 201, 201);
   color: rgb(0, 0, 0);
 }
 
@@ -156,15 +156,16 @@ tbody tr td.acao {
   z-index: 999;
   align-items: center;
   justify-content: center;
+  float: left;
 }
 
 .modal {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   padding: 40px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 13px;
   width: 50%;
 }
 
