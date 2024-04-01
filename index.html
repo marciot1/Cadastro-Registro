@@ -12,9 +12,11 @@
 
 <body>
   <div class="container">
-      <nav class="menu">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAExJREFUSEtjZKAxYKSx+QyjFhAM4QEJov8EnYVfAYqjsfmA5hZQ6AFU7QMSBzT3Ac3jgOYW0DyIhr4FNI8Dmlsw9ONg1AcoIUDz0hQAbegGGXzv/l0AAAAASUVORK5CYII="/>
-      </nav>
+
+      <header class="header">
+        <img src="img/menu.png">
+      </header>
+
       <div class="header">
           <h1>Cadastro Tarefa</h1>
           <button onclick="openModal()" id="new">+ Nova Fazer</i></button>
@@ -26,8 +28,8 @@
             <tr>
                 <th>Responsavel</th>
                 <th>Atribuida</th>
-                <th>Horai</th>
-                <th>Horat</th>
+                <th>Hora de Início</th>
+                <th>Hora de Termino</th>
                 <th>Intercorrencia</th>
                 <th class="acao">Editar</th>
                 <th class="acao">Excluir</th>
@@ -37,7 +39,7 @@
             </tbody>
         </table>
       </div>
-
+    
       <div class="modal-container">
         <div class="modal">
           <form>
@@ -45,17 +47,25 @@
             
             <label for="m-responsavel">Responsavel</label>
             <input id="m-responsavel" type="text" required />
-      
-            <label for="m-atribuida">Atribuida</label>
-            <input id="m-atribuida" type="text" required />
 
-            <label for="m-hora1">Horai</label>
-            <input type="hora1" id="m-hora1" min="00:00" max="00:00" required />
+            <label style="height: 15px;" for="m-hora1">Hora de Início</label>
+            <input type="hora1" id="m-hora1" required />
 
-            <label for="m-hora2">Horat</label>
-            <input type="hora2" id="m-hora2" min="00:00" max="00:00" required />
+            <label for="m-hora2">Hora de Termino</label>
+            <input type="hora2" id="m-hora2" required />
+            
             <label for="m-intercorrencia">Intercorrencia</label>
             <input id="m-intercorrencia" type="text" required />
+
+            <label for="m-atribuida">Atribuida
+              <select  id="m-atribuida">
+               <option value="sim">Sim</option>
+               <option value="nao">Não</option>
+              </select>
+            </label>
+
+
+
             <button id="btnSalvar">Salvar</button>
           </form>
               
