@@ -58,9 +58,6 @@ function openModal(edit = false, index = 0) {
       <td>${item.hora2}</td>
       <td>${item.intercorrencia}</td>
       <td class="acao">
-        <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
-      </td>
-      <td class="acao">
         <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
       </td>
     `
@@ -103,6 +100,8 @@ function openModal(edit = false, index = 0) {
     })
   
   }
+
+
 
   
   const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
