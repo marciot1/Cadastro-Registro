@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(0,0,0,0.1);
+  background-color: white;
 }
 
 button {
@@ -93,7 +94,7 @@ tbody tr td {
 }
 
 thead tr th {
-  padding: 10px;
+  padding: 0%;
   text-align: start;
   margin-bottom: 50px;
 }
@@ -256,8 +257,10 @@ tr {
   font-family: 15px;
 }
 select { margin: auto;
-   border-width: 1px;
-   height: 30px;
-   width: 50px;
+  border-width: 1px;
+  height: 30px;
+  width: 50px; 
+  border-radius: 14%;    
+   
 }
 
