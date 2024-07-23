@@ -15,7 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(0,0,0,0.1);
-  background: white;
+  background: rgb(255, 254, 254);
 }
 
 button {
@@ -257,8 +257,7 @@ tr {
   font-family: 15px;
 }
 select { margin: auto;
-   border-width: 1px;
-   height: 30px;
-   width: 50px;
+  border-width: 1px;
+  height: 30px;
+  width: 50px;
 }
-
