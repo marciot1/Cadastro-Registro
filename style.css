@@ -166,10 +166,10 @@ tbody tr td.acao {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  padding: 40px;
+  padding: 2%;
   background-color: white;
   border-radius: 13px;
-  width: 50%;
+  width: 41%;
 }
 
 .modal label {
@@ -205,7 +205,7 @@ tbody tr td.acao {
 }
 
 .active .modal {
-  animation: modal .4s;
+  animation: modal .0s;
 }
 
 @keyframes modal {
@@ -256,8 +256,6 @@ tr {
   width: 15px;
   font-family: 15px;
 }
-select { margin: auto;
-  border-width: 1px;
-  height: 30px;
-  width: 50px;
+.check{
+    margin:-20em;
 }
