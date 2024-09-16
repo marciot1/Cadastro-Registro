@@ -1,110 +1,39 @@
-const modal = document.querySelector('.modal-container')
-const tbody = document.querySelector('tbody')
-const sResponsavel = document.querySelector('#m-responsavel')
-const sAtribuida = document.querySelector('#m-atribuida')
-const sHorai = document.querySelector('#m-hora1')
-const sHorat = document.querySelector('#m-hora2')
-const sIntercorrencia = document.querySelector('#m-intercorrencia')
-const btnSalvar = document.querySelector('#btnSalvar')
+document.getElementById('new').addEventListener('click', openModal);
+document.getElementById('taskForm').addEventListener('submit', saveTask);
 
+function openModal() {
+    document.getElementById('modal-container').style.display = 'flex';
+}
 
-let itens
-let id
+function closeModal() {
+    document.getElementById('modal-container').style.display = 'none';
+}
 
-function openModal(edit = false, index = 0) {
-    modal.classList.add('active')
-  
-    modal.onclick = e => {
-      if (e.target.className.indexOf('modal-container') !== -1) {
-        modal.classList.remove('active')
-      }
-    }
-  
-    if (edit) {
-      sResponsavel.value = itens[index].responsavel
-      sAtribuida.value = itens[index].atribuida
-      sHorai.value = itens[index].hora1
-      sHorat.value = itens[index].hora2
-      sIntercorrencia.value = itens[index].intercorrencia
-      id = index
-    } else {
-      sResponsavel.value = ''
-      sAtribuida.value = ''
-      sHorai.value = ''
-      sHorat.value = ''
-      sIntercorrencia.value = ''
-    }
-    
-  }
-  
-  function editItem(index) {
-  
-    openModal(true, index)
-  }
-  
-  function deleteItem(index) {
-    itens.splice(index, 1)
-    setItensBD()
-    loadItens()
-  }
-  
-  function insertItem(item, index) {
-    let tr = document.createElement('tr')
-  
-    tr.innerHTML = `
-      <td>${item.responsavel}</td>
-      <td>${item.atribuida}</td>
-      <td>${item.hora1}</td>
-      <td>${item.hora2}</td>
-      <td>${item.intercorrencia}</td>
-      <td class="acao">
-        <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
-      </td>
-    `
-    tbody.appendChild(tr)
-  }
-  
-  btnSalvar.onclick = e => {
-    
-    if (sResponsavel.value == '' || sAtribuida.value == ''  || sHorai.value == '' || sHorat.value == '' || sIntercorrencia.value == '') {
-      return
-    }
-  
+function saveTask(e) {
     e.preventDefault();
-  
-    if (id !== undefined) {
-      itens[id].responsavel = sResponsavel.value
-      itens[id].atribuida = sAtribuida.value
-      itens[id].hora1 = sHorai.value
-      itens[id].hora2 = sHorat.value
-      itens[id].intercorrencia = sIntercorrencia.value
-      intens[id]
-    } 
-    
-    else {
-      itens.push({'responsavel': sResponsavel.value, 'atribuida': sAtribuida.value, 'hora1': sHorai.value, 'hora2': sHorat.value, 'intercorrencia': sIntercorrencia.value})
-    }
-  
-    setItensBD()
-  
-    modal.classList.remove('active')
-    loadItens()
-    id = undefined
-  }
-  
-  function loadItens() {
-    itens = getItensBD()
-    tbody.innerHTML = ''
-    itens.forEach((item, index) => {
-      insertItem(item, index)
-    })
-  
-  }
 
+    const responsavel = document.getElementById('m-responsavel').value;
+    const horaInicio = document.getElementById('m-hora1').value;
+    const horaTermino = document.getElementById('m-hora2').value;
+    const intercorrencia = document.getElementById('m-intercorrencia').value;
+    const atribuida = document.getElementById('m-atribuida').checked ? 'Sim' : 'Não';
 
+    const table = document.querySelector('tbody');
+    const row = document.createElement('tr');
 
-  
-  const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
-  const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
-  
-  loadItens()
+    row.innerHTML = `
+        <td>${responsavel}</td>
+        <td>${atribuida}</td>
+        <td>${horaInicio}</td>
+        <td>${horaTermino}</td>
+        <td>${intercorrencia}</td>
+        <td><button onclick="deleteTask(this)">Excluir</button></td>
+    `;
+
+    table.appendChild(row);
+    closeModal();
+}
+
+function deleteTask(button) {
+    button.parentElement.parentElement.remove();
+}

@@ -1,72 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro Tarefa</title>
-  <link rel="stylesheet" href="style.css">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="container">
+    <div class="container">
+      <img src="img/menu.png">
       <div class="header">
-          <h1>Registro Tarefa</h1>
-          <button onclick="openModal()" id="new">+ Registrar</i></button>
+        <h1>Registro de Tarefas</h1>
+        <button onclick="openModal()" id="new">+ Registrar</button>
+      </di>
+    </div>
+
+    <div class="divTable">
+      <table>
+          <thead>
+              <tr>
+                  <th>Responsável</th>
+                  <th>Atribuída</th>
+                  <th>Hora de Início</th>
+                  <th>Hora de Término</th>
+                  <th>Intercorrência</th>
+                  <th  class="acao">Excluir</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+    </div>
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <form id="taskForm">
+          <h2>Registro</h2>
+
+          <label for="m-responsavel">Responsável</label>
+          <input id="m-responsavel" type="text" required />
+
+          <label for="m-hora1">Hora de Início</label>
+          <input type="time" id="m-hora1" required />
+
+          <label for="m-hora2">Hora de Término</label>
+          <input type="time" id="m-hora2" required />
+
+          <label for="m-intercorrencia">Intercorrência</label>
+          <input id="m-intercorrencia" type="text" required />
+
+          <label for="m-atribuida">Atribuída
+              <input class="check" type="checkbox" id="m-atribuida">
+          </label>
+
+          <button class="bt" id="btnSalvar" type="submit">Salvar</button>
+        </form>
       </div>
-
-      <div class="divTable">
-        <table>
-            <thead>
-            <tr>
-                <th>Responsavel</th>
-                <th>Atribuida</th>
-                <th>Hora de Início</th>
-                <th>Hora de Termino</th>
-                <th>Intercorrencia</th>
-                <th class="acao">Excluir</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-      </div>
-
-      <div class="modal-container">
-        <div class="modal">
-          <form>
-            <h2>Registro</h2>
-
-            <label for="m-responsavel">Responsavel</label>
-            <input id="m-responsavel" type="text" required />
-
-            <label style="height: 15px;" for="m-hora1">Hora de Início</label>
-            <input type="hora1" id="m-hora1" required />
-
-            <label for="m-hora2">Hora de Termino</label>
-            <input type="hora2" id="m-hora2" required />
-
-            <label for="m-intercorrencia">Intercorrencia</label>
-            <input id="m-intercorrencia" type="text" required />
-
-            <label for="m-atribuida">Atribuida
-                <input class="check" type="checkbox" id="m-atribuida" required>
-            </label>
-
-
-
-            <button class="bt" id="btnSalvar">Salvar</button>
-          </form>
-
-
-        </div>
-      </div>
+    </div>
   </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+</html>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <img src="img/menu.png">
+      <div class="header">
+        <h1>Registro de Tarefas</h1>
+        <button onclick="openModal()" id="new">+ Registrar</button>
+      </di>
+    </div>
+
+    <div class="divTable">
+      <table>
+          <thead>
+              <tr>
+                  <th>Responsável</th>
+                  <th>Atribuída</th>
+                  <th>Hora de Início</th>
+                  <th>Hora de Término</th>
+                  <th>Intercorrência</th>
+                  <th  class="acao">Excluir</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+    </div>
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <form id="taskForm">
+          <h2>Registro</h2>
+
+          <label for="m-responsavel">Responsável</label>
+          <input id="m-responsavel" type="text" required />
+
+          <label for="m-hora1">Hora de Início</label>
+          <input type="time" id="m-hora1" required />
+
+          <label for="m-hora2">Hora de Término</label>
+          <input type="time" id="m-hora2" required />
+
+          <label for="m-intercorrencia">Intercorrência</label>
+          <input id="m-intercorrencia" type="text" required />
+
+          <label for="m-atribuida">Atribuída
+              <input class="check" type="checkbox" id="m-atribuida">
+          </label>
+
+          <button class="bt" id="btnSalvar" type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    <script src="script.js"></script>
+</body>
 </html>
 
 
