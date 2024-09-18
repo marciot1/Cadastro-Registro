@@ -27,12 +27,17 @@ function saveTask(e) {
         <td>${horaInicio}</td>
         <td>${horaTermino}</td>
         <td>${intercorrencia}</td>
-        <td><button onclick="deleteTask(this)">Excluir</button></td>
+        <td><button style="color: red;"onclick="deleteTask(this)">Excluir</button></td>
     `;
 
     table.appendChild(row);
     closeModal();
 }
+
+function deleteTask(button) {
+    button.parentElement.parentElement.remove();
+}
+
 
 function deleteTask(button) {
     button.parentElement.parentElement.remove();
