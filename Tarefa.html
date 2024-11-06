@@ -1,0 +1,80 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        input {
+            background: border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-6 w-96">
+        <div class="bg-gray-800 text-white p-4 rounded-t-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-arrow-left mr-2 cursor-pointer" id="backButton"></i>
+                <h1 class="text-lg font-semibold">Registrar tarefa</h1>
+            </div>
+            <div class="flex items-center mb-4">
+                <i style="height: 6em;"class="fas fa-calendar-alt text-2xl mr-4"></i>
+                <form>
+                    <div>
+                        <label style="display: block;" for="end-date">Data de início: </label>
+                        <input id="end-date" type="date" class="border p-2 rounded" />
+                        <input id="end-time" type="time" name="end-time" class="border p-2 rounded" />
+                    </div>
+                    <div>
+                        <label for="end-date">Data de término: </label>
+                        <input id="end-date" type="date" class="border p-2 rounded" />
+                        <input id="end-time" type="time" name="end-time" class="border p-2 rounded" />
+                    </div>
+                </form>
+            </div>
+            <div class="mb-4">
+                <select class="w-full p-2 rounded bg-gray-200 text-gray-700" id="statusSelect">
+                    <option value="">Status</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+        </div>
+        <div class="p-4">
+            <h2 class="text-gray-700 mb-2">Ocorrências</h2>
+            <textarea class="w-full p-2 border rounded h-32" placeholder="Descrição" id="description"></textarea>
+        </div>
+        <div class="p-4">
+            <button class="w-full bg-green-500 text-white py-2 rounded" id="registerButton">Registrar tarefa</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            alert('Back button clicked');
+        });
+
+        document.getElementById('registerButton').addEventListener('click', function() {
+            const status = document.getElementById('statusSelect').value;
+            const description = document.getElementById('description').value;
+
+            if (status === "") {
+                alert('Por favor, selecione um status.');
+                return;
+            }
+
+            if (description.trim() === "") {
+                alert('Por favor, insira uma descrição.');
+                return;
+            }
+
+            alert('Tarefa registrada com sucesso!');
+        });
+    </script>
+</body>
+</html>
